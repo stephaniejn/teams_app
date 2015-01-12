@@ -4,25 +4,11 @@
 
 <%= form_for :team, url: team_path(@team), method: :patch do |f| %>
 
-  <% if @team.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@team.errors.count, "error") %> prohibited
-        this team from being saved:
-      </h2>
-      <ul>
-        <% @team.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  "Title:" <%= f.text_field :title, :placeholder => "team Title", :class => "form-control" %>
+   "Description:" <%= f.text_field :desc, :placeholder => "team Description", :class => "form-control" %>
+   "location:" <%= f.text_field :loc, :placeholder => "team location", :class => "form-control" %>
 
-  <%= f.text_field :title, :placeholder => "team Title", :class => "form-control" %>
-   <%= f.text_field :desc, :placeholder => "team Description", :class => "form-control" %>
-   <%= f.text_field :loc, :placeholder => "team location", :class => "form-control" %>
-
-   <%= f.submit %>
+   <%= f.submit :class=>'btn btn-primary'%>
 
 <% end %>
 

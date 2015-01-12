@@ -2,42 +2,52 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
+    @team = Team.new()
   end
 
-  def new
-    @team = Team.new
-  end
+  def results
+    @search = params[:search]
+    list = flickr.photos.search :text => @search, :sort => "relevance"
 
-  def edit
+    @results = list.map do |photo|
+    FlickRaw.url_s(photo)
+  end
+end
+
+def new
+  @team = Team.new()
+end
+
+def edit
   @team = Team.find(params[:id])
-  end
+end
 
-  def update
+def update
   @team = Team.find(params[:id])
-    @team.update(team_params)
-      redirect_to @team
-  end
+  @team.update(team_params)
+  redirect_to @team
+end
 
-  def show
-    @team = Team.find(params[:id])
-  end
+def show
+  @team = Team.find(params[:id])
+end
 
-  def create
-    @team = Team.new(team_params)
+def create
+  @team = Team.new(team_params)
 
-    @team.save
-    redirect_to "/teams"
-  end
+  @team.save
+  redirect_to "/teams"
+end
 
-  def destroy
-    @team = Team.find(params[:id])
-    @team.destroy
-    redirect_to teams_path
-  end
+def destroy
+  @team = Team.find(params[:id])
+  @team.destroy
+  redirect_to teams_path
+end
 
-   private
-    def team_params
-      params.require(:team).permit(:title, :desc, :loc)
-    end
+private
+def team_params
+  params.require(:team).permit(:title, :desc, :loc)
+end
 
 end

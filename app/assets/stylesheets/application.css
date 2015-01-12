@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+  font-size: 16px;
+ }
+
+ #soccer_photo{
+  width: 70%;
+  margin-top: 5%;
+ }
+
+ h1{
+  text-align: center;
+ }
+
+ #error_message{
+  text-align: center;
+ }
