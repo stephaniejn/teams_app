@@ -7,7 +7,9 @@ Complete the bog
 Before adding any new features your app should...
 
 Support full CRUD,
-List all creatures
+
+List all creatures,
+
 View a single creature
 Add a new creature
 Edit an existing creature
