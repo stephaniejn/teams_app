@@ -7,19 +7,30 @@ Complete the bog
 Before adding any new features your app should...
 
 Support full CRUD,
+
 List all creatures,
-View a single creature
-Add a new creature
-Edit an existing creature
-Delete an existing creature
-Utilize bootstrap for all elements
+
+View a single creature,
+
+Add a new creature,
+
+Edit an existing creature,
+
+Delete an existing creature,
+
+Utilize bootstrap for all elements,
+
 Gracefully handle bad urls
-/asdfsafsfasf
+/asdfsafsfasf,
+
 Error 404 - page not found
-/creatures/sfasfdsadf
+/creatures/sfasfdsadf,
+
 Error 404 - creature not found
-/creatures/99999/edit
-Error 404 - creature not found
+/creatures/99999/edit,
+
+Error 404 - creature not found,
+
 Expand the bog
 
 Visual creatures
