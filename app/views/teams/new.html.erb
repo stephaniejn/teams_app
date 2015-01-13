@@ -17,11 +17,11 @@
 <h2> Add a New team </h2>
 <br>
 <div class="form-group">
-<%= form_for @team, html: {class: "form"} do |f| %>
+<%=  bootstrap_form_for @team, html: {class: "form"} do |f| %>
 
    <%= f.text_field :title, :placeholder => "Team Name", :class => "form-control"%>
-   <%= f.text_field :desc, :placeholder => "Team Description", :class => "form-control" %>
-   <%= f.text_field :loc, :placeholder => "Team Location", :class => "form-control" %>
+   <%= f.text_field :desc, :placeholder => "Team Description", :class => "form-control", label: "Description" %>
+   <%= f.text_field :loc, :placeholder => "Team Location", :class => "form-control", label: "Location" %>
 
    <%= f.submit :class=>'btn btn-primary'%>
 
