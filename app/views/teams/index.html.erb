@@ -1,7 +1,8 @@
-<h1> Find Flickr Photos </h1>
+
 
 <div class="col-md-8 col-md-offset-2">
 <h1>Soccer Teams</h1>
+<br>
 
 <p>
 
@@ -16,10 +17,6 @@
       <td><%= team.title %></td>
       <td><%= team.desc %></td>
       <td><%= team.loc %></td>
-       <td><%= form_tag results_path, :method => "get" do%>
-  <%= text_field_tag :search %>
-  <%= submit_tag "search", :name => nil %>
-  <% end %></td>
       <td> <%= link_to 'Show team', team, :class=>'btn btn-primary'%></td>
       <td><%= link_to 'Destroy', team, :class=>'btn btn-primary',
               method: :delete,

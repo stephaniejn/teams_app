@@ -1,12 +1,26 @@
-
 <div class="col-md-4 col-md-offset-4">
+
+<% if @team.errors.any? %>
+  <div id="error_explanation">
+  <div class = "alert alert-danger"
+    <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+    <ul>
+    <% @team.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  </div>
+<% end %>
+
 <h1>Edit team</h1>
 
 <%= form_for :team, url: team_path(@team), method: :patch do |f| %>
 
   "Title:" <%= f.text_field :title, :placeholder => "team Title", :class => "form-control" %>
    "Description:" <%= f.text_field :desc, :placeholder => "team Description", :class => "form-control" %>
-   "location:" <%= f.text_field :loc, :placeholder => "team location", :class => "form-control" %>
+   "Location:" <%= f.text_field :loc, :placeholder => "team location", :class => "form-control" %>
 
    <%= f.submit :class=>'btn btn-primary'%>
 
