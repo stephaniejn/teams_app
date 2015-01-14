@@ -1,4 +1,6 @@
 class Team < ActiveRecord::Base
+  has_and_belongs_to_many :tags
+
    validates :title, presence: {message: "- Team needs a title"}
     validates :title, uniqueness: { case_sensitive: false, message: "- Title should be unique" }
     validates_format_of :title, :with => /[a-zA-Z]/, message: "- Title should not contain numbers or symbols"

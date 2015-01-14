@@ -7,22 +7,31 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new()
+    @tags = Tag.all
   end
 
   def edit
     @team = Team.find(params[:id])
+    @tags = Tag.all
 
   end
 
   def update
+
     @team = Team.find(params[:id])
     @team.update(team_params)
+
     if @team.errors.any?
-        render :new
-      else
-        flash[:success] = "Added"
-        redirect_to @team
-  end
+      render :new
+    else
+      @team.tags.clear
+      tags = params[:team][:tag_ids]
+      tags.each do |tag_id|
+        @team.tags << Tag.find(tag_id) unless tag_id.blank?
+      end
+      flash[:success] = "Added"
+      redirect_to @team
+    end
 
   end
 
@@ -32,13 +41,19 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.create(team_params)
+    @tags = Tag.all
     if @team.errors.any?
-        render :new
-      else
-        flash[:success] = "Added"
-        redirect_to "/teams"
+      render :new
+    else
+      @team.tags.clear
+      tags = params[:team][:tag_ids]
+      tags.each do |tag_id|
+        @team.tags << Tag.find(tag_id) unless tag_id.blank?
+      end
+      flash[:success] = "Added"
+      redirect_to "/teams"
+    end
   end
-end
 
   def destroy
     @team = Team.find(params[:id])

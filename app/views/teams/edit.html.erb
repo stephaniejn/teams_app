@@ -16,12 +16,12 @@
 
 <h1>Edit team</h1>
 
-<%= form_for :team, url: team_path(@team), method: :patch do |f| %>
+<%= bootstrap_form_for :team, url: team_path(@team), method: :patch do |f| %>
 
-  "Title:" <%= f.text_field :title, :placeholder => "team Title", :class => "form-control" %>
-   "Description:" <%= f.text_field :desc, :placeholder => "team Description", :class => "form-control" %>
-   "Location:" <%= f.text_field :loc, :placeholder => "team location", :class => "form-control" %>
-
+  <%= f.text_field :title, :placeholder => "Team Name"%>
+   <%= f.text_field :desc, :placeholder => "Team Description", label: "Description" %>
+   <%= f.text_field :loc, :placeholder => "Team Location", label: "Location" %>
+   <%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
    <%= f.submit :class=>'btn btn-primary'%>
 
 <% end %>
