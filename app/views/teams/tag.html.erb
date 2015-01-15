@@ -1,0 +1,24 @@
+<div class="col-md-8 col-md-offset-2">
+<h2> Tagged <small> <%=params[:tag] %></small></h2>
+
+<table class="table table-condensed table-responsive">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= team.title %></td>
+      <td><%= team.desc %></td>
+      <td><%= team.loc %></td>
+      <td> <%= link_to 'Show team', team, :class=>'btn btn-primary'%></td>
+      <td><%= link_to 'Destroy', team, :class=>'btn btn-primary',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Edit', edit_team_path(team), :class=>'btn btn-primary' %></td>
+    </tr>
+    </tr>
+  <% end %>
+</table>
+</div>

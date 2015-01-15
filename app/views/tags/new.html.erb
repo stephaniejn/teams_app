@@ -1,0 +1,12 @@
+<div class="col-md-4 col-md-offset-4">
+<h2> Add a New Tag </h2>
+<br>
+<div class="form-group">
+<%=  bootstrap_form_for @tag do |f| %>
+
+   <%= f.text_field :name, :placeholder => "Tag Name"%>
+   <%= f.submit :class=>'btn btn-primary'%>
+
+<% end %>
+
+</div>

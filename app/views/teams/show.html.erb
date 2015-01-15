@@ -1,13 +1,9 @@
 <div class="col-md-4 col-md-offset-4">
+<div class = "box">
   <p>
-    <h2> Soccer Team </h2>
+    <h2><%= @team.title %></h2>
     <br>
     </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= @team.title %>
-  </p>
 
   <p>
     <strong>Description:</strong>
@@ -19,24 +15,26 @@
     <%= @team.loc %>
   </p>
 
+  <p>
+  Tags:
+  <% @team.tags.each do |tag|%>
+  <%= link_to tag.name, tagteam_path(tag.name) %>
+  <% end %>
+  </p>
+
   <br>
-  </div>
-
-  <div class="col-md-6 col-md-offset-3">
-
   <% list = flickr.photos.search :text => @team.loc + @team.title, :sort => "relevance"%>
   <% search = list.map do |photo|%>
-  <% FlickRaw.url_s(photo) %>
+  <% FlickRaw.url_b(photo) %>
   <% end %>
+  <% photo = search.sample%>
+  <img src="<%=photo%>">
 
-  <% search.each do |photo| %>
 
-  <%=image_tag (photo) %>
-
-  <% end %>
 
   <br>
   <br>
-</div>
+   </div>
+  </div>
 </div>
 </div>

@@ -14,12 +14,30 @@
  *= require_self
  */
 
+.navbar {
+  background: none !important;
+  border: 0 !important;
+}
+
+.table{
+  background-color: white !important;
+  opacity: .7 !important;
+  color: black;
+  border-radius: 10px !important;
+}
+
  body{
-  background-image: url("background.jpg");
+  background-image: url("background4.jpg");
+  opacity: 50%;
    background-size: 100%;
-   background-repeat: no-repeat;
   font-size: 16px;
   color: white;
+ }
+
+.box{
+  background-color:rgba(255,255,255,0.4);
+  border-radius: 5px;
+  padding: 5%;
  }
 
 
@@ -29,7 +47,7 @@
   margin-top: 5%;
  }
 
- h1{
+ h1, h3{
   text-align: center;
  }
 

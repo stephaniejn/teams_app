@@ -5,11 +5,21 @@ Rails.application.routes.draw do
 
   get 'results' => 'teams#results'
 
+  get 'tags/team/:team' => 'tags#team', as: :teamtag
+
+  resources :teams
+
+    get 'teams/tag/:tag' => 'teams#tag', as: :tagteam
+
+  resources :tags, only: [:index, :new, :create, :destroy]
+
+    post 'tags/:id' => 'tags#notdestroy', as: :notdestroy
+
   match '/404', to: 'errors#file_not_found', via: :all
   match '/422', to: 'errors#unprocessable', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 
-  resources :teams
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

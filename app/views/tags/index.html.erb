@@ -1,0 +1,29 @@
+
+<div class="col-md-8 col-md-offset-2">
+<!-- <div class = "box"> -->
+<%= render "shared/flash" %>
+<br>
+
+<p>
+
+<h2> Team Tags </h2>
+
+<div id ="table">
+<table class="table table-condensed table-responsive">
+
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= tag.name %></td>
+      <td><%= link_to 'Destroy', tag, :class=>'btn btn-primary',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+
+</table>
+</div>
+
+</p>
+
+</div>
+</div>

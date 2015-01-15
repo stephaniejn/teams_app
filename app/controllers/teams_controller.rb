@@ -37,6 +37,17 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+
+  end
+
+  def tag
+    tag = Tag.find_by_name(params[:tag])
+    if tag
+      @teams = tag.teams
+    else
+      @teams = []
+
+    end
   end
 
   def create
