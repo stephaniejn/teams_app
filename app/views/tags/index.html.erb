@@ -2,7 +2,6 @@
 <div class="col-md-8 col-md-offset-2">
 <!-- <div class = "box"> -->
 <%= render "shared/flash" %>
-<br>
 
 <p>
 
@@ -13,10 +12,16 @@
 
   <% @tags.each do |tag| %>
     <tr>
-      <td><%= tag.name %></td>
+      <td><%= link_to tag.name, tagteam_path(tag.name)%></td>
+      <% if(tag.teams.length == 0) %>
       <td><%= link_to 'Destroy', tag, :class=>'btn btn-primary',
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <% else %>
+        <td><%= link_to 'Destroy', tag, :class=>'btn btn-primary',
+              method: :delete,
+              data: { confirm: "There are " + tag.teams.length.to_s + " teams using this tag. Would you still like to delete it?" } %></td>
+      <% end %>
       <% end %>
     </tr>
 
