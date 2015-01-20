@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:index, :new, :create, :destroy]
 
-  # get '/404', to: 'errors#file_not_found'
-  # get '/422', to: 'errors#unprocessable'
-  # get '/500', to: 'errors#internal_server_error'
+  get '/404', to: 'errors#file_not_found'
+  get '/422', to: 'errors#unprocessable'
+  get '/500', to: 'errors#internal_server_error'
 
 
 
