@@ -39,3 +39,18 @@
  #error_message{
   text-align: center;
  }
+
+ input.tagcloud{
+ text-decoration:none;
+  padding: 3px;
+ display:inline-block;
+
+
+}
+ input.tagcloud, a:hover{
+ text-decoration:none;
+  padding: 3px;
+ display:inline-block;
+ color:#fff;
+
+}
