@@ -77,4 +77,6 @@ class TeamsController < ApplicationController
     params.require(:team).permit(:title, :desc, :loc)
   end
 
+
+
 end

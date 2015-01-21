@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/422', to: 'errors#unprocessable'
   get '/500', to: 'errors#internal_server_error'
 
-
+get '*path', to: "application#not_found"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
