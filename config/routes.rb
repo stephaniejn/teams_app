@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'tags/team/:team' => 'tags#team', as: :teamtag
 
-  resources :teams
+  resources :teams, except: [:index]
 
     get 'teams/tag/:tag' => 'teams#tag', as: :tagteam
 

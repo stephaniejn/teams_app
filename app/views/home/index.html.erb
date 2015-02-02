@@ -1,6 +1,45 @@
-<div class="col-md-6 col-md-offset-3">
-<h2>Welcome Soccer Fans</h2>
-</div>
-</div>
-</div>
+<!-- <div class="col-md-6 col-md-offset-3"> -->
+<div class = "container">
+  <h1 style= "color:black">Welcome Soccer Fans!</h1>
+  <hr class="intro-divider">
+  <div id="header-carousel" class='carousel slide' data-ride='carousel' data-interval='false'>
+    <div class="row">
+      <%= image_tag "background.jpg", style: "width: 100%; opacity: 50%;" %>
+    </div>
 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner text-center">
+      <div class="item active">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <h2 class="index-header">About The Soccer Teams App</h2>
+    <hr class="intro-divider">
+    <p class="aboutme">The Soccer Teams App was created by Stephanie Nilles for General Assembly's Web Development Immersive. It's her first Ruby on Rails project. Through The Soccer Teams app, you can save soccer teams and add tags to each team.</p>
+
+      <h2 class="index-header">Top Teams</h2>
+      <hr class="intro-divider">
+      <table class="table table-condensed table-responsive">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+
+        <% @teams.each do |team| %>
+        <tr>
+          <td><%= team.title %></td>
+          <td><%= team.desc %></td>
+          <td><%= team.loc %></td>
+          <td> <%= link_to 'Show team', team, :class=>'btn btn-primary'%></td>
+          <td><%= link_to 'Destroy', team, :class=>'btn btn-primary',
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_team_path(team), :class=>'btn btn-primary' %></td>
+        </tr>
+        <% end %>
+      </table>
+  </div>
+</div>

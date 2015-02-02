@@ -1,21 +1,41 @@
 .navbar {
-  background: none !important;
+  background-color: #359948;
   border: 0 !important;
+}
+
+.index-header{
+  padding-top: 60px;
+}
+
+#tagged_header{
+  padding-bottom: 20px;
+}
+
+#welcome_header{
+  padding-bottom: 20px;
 }
 
 .table{
   background-color: white !important;
-  opacity: .7 !important;
+  /*opacity: .7 !important;*/
   color: black;
   border-radius: 10px !important;
+  margin-bottom: 100px !important;
+}
+
+#page-container{
+  padding-top: 80px;
+}
+
+.intro-divider {
+width: 94%;
+border-top: 1px solid gray;
+border-bottom: 1px solid gray;
 }
 
  body{
-  background-image: asset_url("background.jpg");
-  opacity: 50%;
-   background-size: 100%;
   font-size: 16px;
-  color: white;
+  color: black;
   font-family: 'Architects Daughter', cursive;
  }
 
@@ -25,6 +45,41 @@
   padding: 5%;
  }
 
+/* ------------ Carousel ------------ */
+
+#header-carousel {
+  padding-top: 20px !important;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+color: white;
+}
+
+#overlay-text {
+  font-family: 'Amatic SC';
+  font-size: 150px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 3px 8px #000;
+  padding-bottom: 100px;
+}
+
+.overlay {
+  color:#fff;
+  position:absolute;
+  z-index:12;
+  top:13%;
+  left:0;
+  width:100%;
+  text-align:center;
+}
 
 
  #soccer_photo{
