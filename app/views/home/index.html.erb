@@ -23,18 +23,16 @@
       <h2 class="index-header">Top Teams</h2>
       <hr class="intro-divider">
       <table class="responsive">
-        <thead>
+   
           <tr>
             <th>Title</th>
             <th>Description</th>
             <th>Location</th>
           </tr>
-        </thead>
-
-        <tbody>
+   
           <% @teams.each do |team| %>
           <tr>
-            <td><strong><%= team.title %></strong></td>
+            <td><%= team.title %></strong></td>
             <td><%= team.desc %></td>
             <td><%= team.loc %></td>
             <td> <%= link_to 'Show team', team, :class=>'btn btn-primary'%></td>
@@ -44,7 +42,6 @@
             <td><%= link_to 'Edit', edit_team_path(team), :class=>'btn btn-primary' %></td>
           </tr>
           <% end %>
-          </tbody>
       </table>
   </div>
 </div>
