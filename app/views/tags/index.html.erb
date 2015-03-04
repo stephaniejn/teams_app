@@ -4,13 +4,6 @@
 <%= render "shared/flash" %>
 
 <h2> Team Tags </h2>
-<div>
-        <% tag_max = @tags.map{|t| t.teams.length}.sort.last %>
-          <% @tags.each do |tag| %>
-          <% fontsize = (tag.teams.length.to_f / tag_max) * 25 %>
-          <%= link_to tag.name, tagteam_path(tag.name), :class => "tagcloud", :style => "font-size: #{fontsize.to_i+3}px" %>
-          <% end %>
-        </div><br>
 <div id ="table">
 
 <table class="table table-condensed table-responsive">

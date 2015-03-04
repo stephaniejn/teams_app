@@ -16,7 +16,11 @@
 }
 
 #teams-table{
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+}
+
+a:hover {
+  background-color: #337AB7; 
 }
 
 .table{
@@ -24,7 +28,11 @@
   /*opacity: .7 !important;*/
   color: black;
   border-radius: 10px !important;
-  margin-bottom: 100px !important;
+  margin-top: 50px;
+}
+
+#tag-cloud{
+  margin-bottom: 30px;
 }
 
 #page-container{

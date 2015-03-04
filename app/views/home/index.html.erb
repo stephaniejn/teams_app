@@ -1,4 +1,4 @@
-<!-- <div class="col-md-6 col-md-offset-3"> -->
+
 <div class = "container">
   <h1 style= "color:black">Welcome Soccer Fans!</h1>
   <hr class="intro-divider">
@@ -16,34 +16,44 @@
 
   <%= render "shared/flash" %>
 
+<div class="row">
   <div class="col-md-8 col-md-offset-2">
-
     <h2 class="index-header">About The Soccer Teams App</h2>
     <hr class="intro-divider">
     <p class="aboutme">The Soccer Teams App was created by Stephanie Nilles for General Assembly's Web Development Immersive. It's her first Ruby on Rails project. Through The Soccer Teams app, you can save soccer teams and add tags to each team.</p>
 
-      <h2 class="index-header">Top Teams</h2>
-      <hr class="intro-divider">
-      <table id="teams-table" class="responsive">
-   
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Location</th>
-          </tr>
-   
-          <% @teams.each do |team| %>
-          <tr>
-            <td><%= team.title %></strong></td>
-            <td><%= team.desc %></td>
-            <td><%= team.loc %></td>
-            <td> <%= link_to 'Show team', team, :class=>'btn btn-primary'%></td>
-            <td><%= link_to 'Destroy', team, :class=>'btn btn-primary',
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-            <td><%= link_to 'Edit', edit_team_path(team), :class=>'btn btn-primary' %></td>
-          </tr>
-          <% end %>
-      </table>
+    <h2 class="index-header">Top Teams</h2>
+    <hr class="intro-divider"> 
+    <table id="teams-table" class="responsive">
+
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+      </tr>
+
+      <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.title %></td>
+        <td><%= team.desc %></td>
+        <td><%= team.loc %></td>
+        <td> <%= link_to 'Show team', team, :class=>'btn btn-primary'%></td>
+        <td><%= link_to 'Destroy', team, :class=>'btn btn-primary',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_team_path(team), :class=>'btn btn-primary' %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+   <div id="tag-cloud" class="col-md-8 col-md-offset-2 text-center">
+    <h2>Teams Tag Cloud</h2>
+    <hr class="intro-divider">
+    <% tag_max = @tags.map{|t| t.teams.length}.sort.last %>
+    <% @tags.each do |tag| %>
+    <% fontsize = (tag.teams.length.to_f / tag_max) * 25 %>
+    <%= link_to tag.name, tagteam_path(tag.name), :class => "tagcloud", :style => "font-size: #{fontsize.to_i+3}px" %>
+    <% end %>
   </div>
 </div>
