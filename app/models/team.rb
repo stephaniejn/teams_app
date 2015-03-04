@@ -10,5 +10,4 @@ class Team < ActiveRecord::Base
     maximum: 255, message: "- Please submit a description between 5-255 characters"}
 end
 
-Team.new
 

@@ -17,10 +17,9 @@ class TeamsController < ApplicationController
   end
 
   def update
-
     @team = Team.find(params[:id])
     @team.update(team_params)
-
+    @tags = Tag.all
     if @team.errors.any?
       render :new
     else
@@ -29,10 +28,9 @@ class TeamsController < ApplicationController
       tags.each do |tag_id|
         @team.tags << Tag.find(tag_id) unless tag_id.blank?
       end
-      flash[:success] = "Added"
-      redirect_to @team
+      flash[:success] = "Updated"
+      redirect_to "/"
     end
-
   end
 
   def show
@@ -62,14 +60,14 @@ class TeamsController < ApplicationController
         @team.tags << Tag.find(tag_id) unless tag_id.blank?
       end
       flash[:success] = "Added"
-      redirect_to "/teams"
+      redirect_to "/"
     end
   end
 
   def destroy
     @team = Team.find(params[:id])
     @team.destroy
-    redirect_to teams_path
+    redirect_to "/"
   end
 
   private

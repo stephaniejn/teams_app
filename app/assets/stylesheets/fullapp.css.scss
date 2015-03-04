@@ -15,6 +15,10 @@
   padding-bottom: 20px;
 }
 
+#teams-table{
+  margin-bottom: 60px;
+}
+
 .table{
   background-color: white !important;
   /*opacity: .7 !important;*/
@@ -43,6 +47,10 @@ border-bottom: 1px solid gray;
   background-color:rgba(255,255,255,0.4);
   border-radius: 5px;
   padding: 5%;
+ }
+
+ #new-team{
+  float: none !important;
  }
 
 /* ------------ Carousel ------------ */
